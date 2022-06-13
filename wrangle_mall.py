@@ -14,10 +14,13 @@ from pydataset import data
 
 import sklearn.preprocessing
 
-def get_connection(database, user=user, host=host, password=password):
-    '''get URL with user, host, and password from env '''
-    
-    return f"mysql+pymysql://{user}:{password}@{host}/{database}"
+# Get Connection
+def get_connection(db, username=username, host=host, password=password):
+    '''
+    This function uses my info from my env file to
+    create a connection url to access the Codeup SQL db.
+    '''
+    return f'mysql+pymysql://{username}:{password}@{host}/{db}'
     
 
 def get_sql_data(database,query):
